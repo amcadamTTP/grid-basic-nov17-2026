@@ -1,0 +1,126 @@
+/************* EXAMPLE 1 *************/
+
+#a {
+  background-color: coral;
+}
+
+#b {
+  background-color: purple;
+
+  /* PLACING ITEMS USING LINE NUMBERS */
+  grid-row: 1 / 3;
+  grid-column: 2 / 4;
+}
+
+#c {
+  background-color: gold;
+}
+
+#d {
+  background-color: dodgerblue;
+}
+
+#e {
+  background-color: hotpink;
+  width: 50%;
+  height: 50%;
+
+  /* Override default placement for this one item */
+  place-self: center;
+}
+
+#f {
+  background-color: lightgreen;
+
+  /* Span lets you choose how many rows or columns
+  an item will take up */
+
+  grid-row: 3 / span 2;
+  grid-column: 2 / span 2;
+}
+
+#g {
+  background-color: crimson;
+  width: 2rem;
+  height: 2rem;
+}
+
+#h {
+  background-color: mediumpurple;
+}
+
+#i {
+  background-color: yellowgreen;
+}
+
+#j {
+  background-color: magenta;
+
+  /* Negative line numbers let you easily choose
+  the last row or column lines */
+  grid-column: 1 / -1;
+}
+
+#k {
+  background-color: gray;
+}
+
+/* CREATE THE GRID */
+/* Some grid properties go on the parent
+Some grid properties go on the grid items (children) */
+
+#demoGrid {
+
+  /* Turn a container into a grid */
+
+  display: grid;
+
+  /* Set up the grid columns and rows */
+  /* fr is a fraction unit, which divides up available space */
+  /* repeat() will create many equally sized rows or columns */
+  
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 15em;
+
+  /* To set template rows and columns at the same time: */
+
+  /* grid-template: 15em / repeat(3, 1fr); */
+
+  /* Set the size of automatically created rows and columns */
+  /* Useful when you don't know how many items will be in the grid! */
+
+  grid-auto-rows: 4em;
+
+  /* Fixed space between columns and/or rows */
+
+  gap: .5em;
+
+  /* Affect placement of items that don't take up the whole square */
+
+  /* place-items: center; */
+}
+
+/************* EXAMPLE 2 *************/
+
+img {
+  max-width: 100%;
+}
+
+h2 {
+  font-family: sans-serif;
+  font-weight: 100;
+  margin: 0;
+}
+
+#grid2 {
+  display: grid;
+  grid-template: auto / repeat(4, 1fr);
+  gap: 2rem;
+}
+
+/* NESTING GRIDS */
+#discover {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  gap: 1fr;
+}
